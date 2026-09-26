@@ -49,6 +49,13 @@ jobs:
         with:
           add-job-summary: "on-failure"
 
+      - name: Create Fake Keystore Passwords for Fork
+        run: |
+          echo "123456" > ZalithLauncher/.store_password.txt
+          echo "123456" > ZalithLauncher/.key_password.txt
+          cp ZalithLauncher/zalith_launcher_debug.jks ZalithLauncher/zalith_launcher.jks
+          
+
       - name: Build APK for ${{ matrix.arch }}
         run: |
           chmod +x gradlew
