@@ -46,8 +46,9 @@ android {
         version = release(37) {
             minorApiLevel = 2
         }
-    
-        signingConfigs {
+    }
+
+    signingConfigs {
         create("releaseBuild") {
             storeFile = file("zalith_launcher.jks")
             storePassword = getKeyFromLocal("STORE_PASSWORD", ".store_password.txt")
@@ -308,4 +309,4 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
-}
+} 
