@@ -46,15 +46,13 @@ android {
         version = release(37) {
             minorApiLevel = 2
         }
-    }
-
-            signingConfigs {
+    
+    signingConfigs {
         create("releaseBuild") {
-            // We use the fallback debug key file that the original dev already committed to the repo
-            storeFile = file("zalith_launcher_debug.jks")
-            storePassword = defaultStorePassword
-            keyAlias = "movtery_zalith_debug"
-            keyPassword = defaultKeyPassword
+            storeFile = file("zalith_launcher.jks")
+            storePassword = getKeyFromLocal("STORE_PASSWORD", ".store_password.txt")
+            keyAlias = "movtery_zalith"
+            keyPassword = getKeyFromLocal("KEY_PASSWORD", ".key_password.txt")
         }
         create("debugBuild") {
             storeFile = file("zalith_launcher_debug.jks")
@@ -63,7 +61,6 @@ android {
             keyPassword = defaultKeyPassword
         }
     }
-
 
         create("debugBuild") {
             storeFile = file("zalith_launcher_debug.jks")
