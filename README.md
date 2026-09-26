@@ -1,3 +1,9 @@
+**NOTE: this is a fork of Zalith launcher 2 designed to unlock offline accounts, all credits go to the original developer, @MovTery
+check the actions tab for releases**
+
+
+
+
 # Zalith Launcher 2
 ![Downloads](https://img.shields.io/github/downloads/ZalithLauncher/ZalithLauncher2/total)
 [![Sponsor](https://img.shields.io/badge/sponsor-30363D?logo=GitHub-Sponsors)](https://afdian.com/a/MovTery)
