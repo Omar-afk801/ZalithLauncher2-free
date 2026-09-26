@@ -48,15 +48,22 @@ android {
         }
     }
 
-        signingConfigs {
+            signingConfigs {
         create("releaseBuild") {
-            // Force the release configuration to use standard password-free debug keys
-            initWith(getByName("debug"))
+            // We use the fallback debug key file that the original dev already committed to the repo
+            storeFile = file("zalith_launcher_debug.jks")
+            storePassword = defaultStorePassword
+            keyAlias = "movtery_zalith_debug"
+            keyPassword = defaultKeyPassword
         }
         create("debugBuild") {
-            initWith(getByName("debug"))
+            storeFile = file("zalith_launcher_debug.jks")
+            storePassword = defaultStorePassword
+            keyAlias = "movtery_zalith_debug"
+            keyPassword = defaultKeyPassword
         }
     }
+
 
         create("debugBuild") {
             storeFile = file("zalith_launcher_debug.jks")
