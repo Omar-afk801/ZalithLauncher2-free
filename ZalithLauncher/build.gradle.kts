@@ -61,13 +61,6 @@ android {
             keyPassword = defaultKeyPassword
         }
     }
-        create("debugBuild") {
-            storeFile = file("zalith_launcher_debug.jks")
-            storePassword = defaultStorePassword
-            keyAlias = "movtery_zalith_debug"
-            keyPassword = defaultKeyPassword
-        }
-    }
 
     defaultConfig {
         applicationId = zalithPackageName
