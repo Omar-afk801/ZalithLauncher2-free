@@ -48,13 +48,16 @@ android {
         }
     }
 
-    signingConfigs {
+        signingConfigs {
         create("releaseBuild") {
-            storeFile = file("zalith_launcher.jks")
-            storePassword = getKeyFromLocal("STORE_PASSWORD", ".store_password.txt")
-            keyAlias = "movtery_zalith"
-            keyPassword = getKeyFromLocal("KEY_PASSWORD", ".key_password.txt")
+            // Force the release configuration to use standard password-free debug keys
+            initWith(getByName("debug"))
         }
+        create("debugBuild") {
+            initWith(getByName("debug"))
+        }
+    }
+
         create("debugBuild") {
             storeFile = file("zalith_launcher_debug.jks")
             storePassword = defaultStorePassword
